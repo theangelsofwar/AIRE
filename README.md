@@ -52,11 +52,19 @@ I. Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install
 
     Create the instance in the root of the project:
     > graph init --from-example <GITHUB_USERNAME>/<SUBGRAPH_NAME> [<DIRECTORY>]
-
-
+      graph init --from-example angiechangpagne/aire
 
   4. deploy example smart contract to 
-  5. Ganache(written in Solidity or Rust)
+    
+    write the contract - .sol
+    > truffle compile
+    > truffle migrate
+
+    Deploys a GravatarRegistry smart contract to ganache
+    Sets up sample data to index on
+
+  5. Deploy Contract to Ganache(written in Solidity or Rust)
+    > sed -i -e 
   6. use subgraph in React dApp Client
 
 II. Write Mappings
