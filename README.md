@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+Welcom to AIRE
 
-You can use the [editor on GitHub](https://github.com/RedEtherProject/AIRE/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+A decentralized Application to Mock Twitter: Be Free To Say Your Thoughts Without Censorship by central authorities. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Hack back your freedom of Speech into the Ether, and go on AIRE. 
 
-### Markdown
+For Free Thinkers who recognize the new Englightenment we are about to enter!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- Run by Solidity transactions on the Ethereum Blockchain
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/RedEtherProject/AIRE/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- to AIRE is to HUMAN; Freedom of Speech is a human right!
+- POST functionality : AIRE your message into the Ether
+  - non-blocking, non-censorship, nobody can get blocked off or reported by the platform, 
+  - but there is a limit to how much you are allowed to AIRE for free every day, AIRE more than the limit and you can pay in ETH!
+  - Followers can ECHO (analogous to a retweet) an AIRE, 
+  - 
+Functionalities: See the Wiki
