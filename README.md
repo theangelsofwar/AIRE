@@ -39,7 +39,7 @@ I. Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install
       clone a graph node
     > cd graph-node/docker
 
-    If you are using Linus, I'm sorry. 
+    If you are using Linux, I'm sorry. 
     https://thegraph.com/docs/quick-start#local-development
 
     Open Docker Desktop
@@ -57,14 +57,30 @@ I. Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install
   4. deploy example smart contract to 
     
     write the contract - .sol
+    > cd aire
     > truffle compile
     > truffle migrate
 
+    If there is a migrationn issue, check that truffle.js config file matches the settings on Local Ethereum Net(Ganache). Switch from port 7545 to 8545
+
+    Copy the account address from the Migration, this is the public address of the Contract: 0x0061Bd8aC3bE503b4422da5db980043839328588
+
     Deploys a GravatarRegistry smart contract to ganache
-    Sets up sample data to index on
+    Sets up sample data for protocol to index on
 
   5. Deploy Contract to Ganache(written in Solidity or Rust)
-    > sed -i -e 
+    Move to root dir 
+    > sed -i -e \
+    's/0x2E645469f354BB4F5c8a05B3b30A929361cf77eC/<CONTRACT_ADDRESS>/g' \
+    subgraph.yaml
+    
+    > sed -i -e \
+    's/0x2E645469f354BB4F5c8a05B3b30A929361cf77eC/0x0061Bd8aC3bE503b4422da5db980043839328588/g' \ subgraph.yaml
+
+
+
+sed -i -e \'s/0x2E645469f354BB4F5c8a05B3b30A929361cf77eC/0x0061Bd8aC3bE503b4422da5db980043839328588/g' \
+    subgraph.yaml
   6. use subgraph in React dApp Client
 
 II. Write Mappings
