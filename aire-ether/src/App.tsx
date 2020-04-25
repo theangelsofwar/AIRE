@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect, useReducer, useContext } from 'react';
 import logo from './logo.svg';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import { ApolloProvider } from 'react-apollo';
+import {
+  ApolloLink,
+  ApolloClient,
+  InMemoryCache,
+  HttpLink
+} from 'apollo-client-preset';
+
+const client = new ApolloClient({
+
+})
+
 import './App.css';
 
 
@@ -10,6 +22,16 @@ import Profile from '../Profile';
 import Login from '../Login';
 
 function App() {
+
+  const initialState =useContext(Context);
+  const [state, setState] = useState(initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    
+  });
+
+
   return (
     <div className="App">
       <header className="App-header">
