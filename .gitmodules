@@ -1,0 +1,3 @@
+[submodule "graphnode"]
+	path = graphnode
+	url = https://github.com/graphprotocol/graph-node

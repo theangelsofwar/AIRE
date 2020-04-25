@@ -1,4 +1,4 @@
-Welcom to AIRE
+Welcome to AIRE
 
 A decentralized Application to Mock Twitter: Be Free To Say Your Thoughts Without Censorship by central authorities. 
 
@@ -25,7 +25,7 @@ What is The Graph Protocol is a way of indexing data on decentralized Blockchain
 -You can create your own subgraph to meet the requirements of you dApp
 
 
-I. Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install-the-graph-cli
+Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install-the-graph-cli
 
  -if you aren't interested in the theory behind this and simply want to create a subgraph for you smart contract, simply go to quickstart
 
@@ -54,6 +54,8 @@ I. Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install
     > graph init --from-example <GITHUB_USERNAME>/<SUBGRAPH_NAME> [<DIRECTORY>]
       graph init --from-example angiechangpagne/aire
 
+
+      graph init angiechangpagne/subgraph-aire
   4. deploy example smart contract to 
     
     write the contract - .sol
@@ -61,7 +63,7 @@ I. Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install
     > truffle compile
     > truffle migrate
 
-    If there is a migrationn issue, check that truffle.js config file matches the settings on Local Ethereum Net(Ganache). Switch from port 7545 to 8545
+    If there is a migration issue, check that truffle.js config file matches the settings on Local Ethereum Net(Ganache). Switch from port 7545 to 8545
 
     Copy the account address from the Migration, this is the public address of the Contract: 0x0061Bd8aC3bE503b4422da5db980043839328588
 
@@ -71,22 +73,28 @@ I. Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install
   5. Deploy Contract to Ganache(written in Solidity or Rust)
     Move to root dir 
     > sed -i -e \
-    's/0x2E645469f354BB4F5c8a05B3b30A929361cf77eC/<CONTRACT_ADDRESS>/g' \
+    's/0x2E645469f354BB4F5c8a05B3b30A929361cf77eC/0x0061Bd8aC3bE503b4422da5db980043839328588/g' \
     subgraph.yaml
     
     > sed -i -e \
     's/0x2E645469f354BB4F5c8a05B3b30A929361cf77eC/0x0061Bd8aC3bE503b4422da5db980043839328588/g' \ subgraph.yaml
 
-
+sed -i -e \
+    's/0x2E645469f354BB4F5c8a05B3b30A929361cf77eC/<CONTRACT_ADDRESS>/g' \
+    subgraph.yaml
 
 sed -i -e \'s/0x2E645469f354BB4F5c8a05B3b30A929361cf77eC/0x0061Bd8aC3bE503b4422da5db980043839328588/g' \
     subgraph.yaml
   6. use subgraph in React dApp Client
 
+I. Defining your own Subgraph
+
+Creating a subgraph will create a custom scheme definition on which data to index from Ethereum and how it will be stored. After you deploy a subgraph, it will be permanently part of the global graph of blockchain data. 
+- subgraph.yaml: Contains the subgraph manifest which determines the indexing
+- schema.graphql: GraphQL schema that defines what data is stored and the shape of queries
+- mapping.ts -AssemblyScript Mappings: AssemblyScript translates event data on Ether to graphQL fields in the schema with typescript.
+
 II. Write Mappings
-
-
-
 
 
 
@@ -130,6 +138,8 @@ Folder Structure:
 
   Communicating Client Side to Smart Contracts
   - graphql
+    Queries will be translated from GraphQL using the Graph Node's endpoint and translated over through its internal indexing protocol. A great way of testing the queries is with this tool: https://chrome.google.com/webstore/detail/project-artemis/gpncgocimlpojfgbphndpjgkkhdjhnpb
+
   - Assembly Script(lower level language)
 
 
