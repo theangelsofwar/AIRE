@@ -186,9 +186,17 @@ Folder Structure:
 Client Side: Now Create the Client Side React App
 > npx create-react-app aire-ether --typescript
 
+Apollo GraphQL Schema and Apollo Server
+aire-ether-apollo 
 
 
 
+API Design:
+1. AIRE = POST a tweet   api/AIRE
+2. ECHO = POST a retweet 
+3. VACUUM = DELETE and AIRE api/delete/?id
+4. ETHER = GET ALL news Feed api/get
+5. PROFILE = get user profile api/get/?id
 
 
 

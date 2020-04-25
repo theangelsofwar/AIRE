@@ -1,6 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+
+
+// import Header from '../Header';
+import Layout from '../Layout';
+import Profile from '../Profile';
+import Login from '../Login';
 
 function App() {
   return (
