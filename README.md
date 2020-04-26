@@ -64,6 +64,8 @@ Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install-th
     > truffle compile
     > truffle migrate
 
+    Translate mirror the backend HTTP requests with SOlidity functions, even handlers. 
+
     If there is a migration issue, check that truffle.js config file matches the settings on Local Ethereum Net(Ganache). Switch from port 7545 to 8545
 
     Copy the account address from the Migration, this is the public address of the Contract: 0x0061Bd8aC3bE503b4422da5db980043839328588

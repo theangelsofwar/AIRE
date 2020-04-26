@@ -59,15 +59,19 @@ contract Aire {
     require(bytes(_id) > 0 && _id < echos);
     //figure how to append to their aire array the addresses of the aires instead of the content, otherwise it is duplication    
     Aire memory _aire = airePosts[_id];
-    string memory _content = _aire.content;
+    // string memory _content = _aire.content;
     // address payable _author = _aire.author;
     // address(_author).transfer(msg.value);
     msg.sender.airePosts[msg.sender.airCount++]= _aire.echos++;
     //check the async of this solidity line
-    emit AireEchoed(_id, _content, msg.sender);
+    emit AireEchoed(_id, aire._content, msg.sender);
   }
 
   function mistAire(uint memory _id) pubic {
-    emit AireMist(, msg.sender);
+    require(_id > 0 && _id <= aireCount);
+    Aire memory _aire = airePosts[_id];
+    // address payable _author = _aire.author;
+    _aire.mists++;
+    emit AireMist(_id, _aire.content, msg.sender);
   } 
 }
