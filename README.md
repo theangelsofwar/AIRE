@@ -13,7 +13,8 @@ For Free Thinkers who recognize the new Englightenment we are about to enter!
   - non-blocking, non-censorship, nobody can get blocked off or reported by the platform, 
   - but there is a limit to how much you are allowed to AIRE for free every day, AIRE more than the limit and you can pay in ETH!
   - Followers can ECHO (analogous to a retweet) an AIRE, 
-  - 
+  - Follwers can MIST (analogous to like or "hear")
+  - By the way, everyone is everyone's followers... 
 Functionalities: See the Wiki
 
 
@@ -197,11 +198,22 @@ API Design:
 3. VACUUM = DELETE and AIRE api/delete/?id
 4. ETHER = GET ALL news Feed api/get
 5. PROFILE = get user profile api/get/?id
+6. MIST = Like an "AIRE", equvalent to "heart" , "like"
 
-
-
+Aire.sol
+ECHO-
+  increment echoCount to a specific aireId, 
+  while also appending the aireId's address to the entity's airePosts [] array
+  entityId does not matter
 
   How is the Data Stored with Postgres on the Blockchain?
   - Use of IPFS(Interplanetary File Transfer) is peer to peer hosted, in the blockchain we are all each other's database. We will store each other's "AIREs" and everytime we post an "ECHO"(as in retweet) we re-reference the public hash address of that storage node. 
 
-  - Becaues of the structure of the Blockchain, it is very difficult to tamper the truth of the data, as you need a majority of 51% to alter the true state. 
+  - Because of the structure of the Blockchain, it is very difficult to tamper the truth of the data, as you need a majority of 51% to alter the true state. 
+
+
+
+
+
+  “Let us advance on Chaos and the Dark”
+― Ralph Waldo Emerson, Self-Reliance
