@@ -6,7 +6,7 @@ contract Migrations {
   uint public last_completed_migration;
 
   constructor() public {
-    owner = msg.sendler;
+    owner = msg.sender;
   }
 
   modifier restricted() {
