@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-import AireFeed from './AireFeed';
+import AireFeed from './AireEther';
 import InputText from './InputText';
 import Entity from './Entity';
 //Entity is their profile when queried

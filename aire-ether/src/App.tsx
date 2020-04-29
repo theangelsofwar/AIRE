@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useReducer, useContext } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Aire from './abis/Aire.json';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import AireEther from './components/AireEther';
 import { ApolloProvider } from 'react-apollo';
 import {
   ApolloLink,
@@ -9,47 +10,96 @@ import {
   HttpLink
 } from 'apollo-client-preset';
 
-const client = new ApolloClient({
-
-})
-
 import './App.css';
+import Web3 from 'web3';
 
 
 // import Header from '../Header';
-import Layout from '../Layout';
-import Profile from '../Profile';
-import Login from '../Login';
+// import Layout from '../Layout';
+// import Profile from '../Profile';
+// import Login from '../Login';
 
-function App() {
+class App extends Component {
+  async componentWillMount() {
+    await this.loadWeb3()
+    await this.loadBlockchainData()
+  }
 
-  const initialState =useContext(Context);
-  const [state, setState] = useState(initialState);
-  const [state, dispatch] = useReducer(reducer, initialState);
+  async loadWeb3() {
+    if (window.ethereum) {
+      window.web3 = new Web3(window.ethereum);
+      await window.ethereum.enable()
+    } 
+    else if (window.web3) {
+      window.web3 = new Web3(window.web3.currentProvider);
+    }
+    else {
+      window.alert('Non Eth Browser, need metamask');
+    }
+  }
 
-  useEffect(() => {
-    
-  });
+  async loadBlockchainData() {
+    const web3 = window.web3;
+
+    const accounts = await web3.eth.getAccounts()
+    this.setState({ account: accounts[0] });
+
+    const networkId = await web3.eth.net.getId()
+
+    const networkData = Aire.networks[networkId]
+
+    if(networkData) {
+      const aireNetwork = web3.eth.Contract(Aire.abi, networkData.address)
+      this.setState({ aireNetwork });
+
+      const aireCount = await aireNetwork.methods.aireCount().call()
+      this.setState({ aireCount })
 
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      for(let i = 1; i <= aireCount; i++){
+        const aire = await aireNetwork.methods.airePosts(i).call()
+        this.setState({
+          airePosts: [...this.state.airePosts, aire]
+        })
+      }
+      this.setState({ loading: false })
+    } else {
+      window.alert('AireNetwork contract not eployed to detected network')
+    }
+  }
+
+
+  createAire(content) {
+    this.setState({ loading: true })
+    this.state.aireNetwork.methods.createAire(content).send({ from: this.state.account })
+    .once('receipt', (receipt) => {
+      this.setState({ loading: false })
+    })
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      account: '',
+      aireNetwork: null,
+      aireCount: 0, 
+      airePosts: [],
+      loading: true
+    }
+
+    this.createAire = this.createAire.bind(this);
+  }
+
+
+
+  render() {
+    return (
+      <div>
+
+      </div>
+    )
+  }
+  
 }
 
 export default App;

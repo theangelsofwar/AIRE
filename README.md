@@ -24,6 +24,23 @@ Serving on An Ethereum Serverless platform for tracking smart contracts:
 > npm -g install embark
 
 
+
+> npm install -g ethereumjs-testrpc
+
+
+> testrpc
+
+> truffle migrate
+
+
+> npm run dev
+
+
+> truffle test
+
+
+> npm run build
+
 Configs:
 
 
