@@ -1,7 +1,7 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.6.4;
 
 contract Aire {
-  string public name;
+  string public username;
   uint public aireCount = 0;
   uint public echos = 0;
   uint public mists = 0;
@@ -17,8 +17,8 @@ contract Aire {
 
   struct Entity {
     uint id;
-    string name;
-    uint airePosts [];
+    string username;
+    string[] airePosts;
     address payable author;
   }
 

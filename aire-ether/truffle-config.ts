@@ -1,5 +1,5 @@
-import 'babel-register';
-import 'babel-polyfill';
+require('babel-register');
+require('babel-polyfill');
 
 module.exports = {
   networks: {

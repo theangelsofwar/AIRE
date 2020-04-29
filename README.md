@@ -19,6 +19,11 @@ Functionalities: See the Wiki
 
 
 
+
+Serving on An Ethereum Serverless platform for tracking smart contracts:
+> npm -g install embark
+
+
 Configs:
 
 
@@ -96,6 +101,12 @@ Creating a subgraph will create a custom scheme definition on which data to inde
 - subgraph.yaml: Contains the subgraph manifest which determines the indexing
 - schema.graphql: GraphQL schema that defines what data is stored and the shape of queries
 - mapping.ts -AssemblyScript Mappings: AssemblyScript translates event data on Ether to graphQL fields in the schema with typescript.
+
+
+
+
+> truffle init
+
 
 II. Write Mappings
 specVersion: 0.0.1
