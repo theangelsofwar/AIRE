@@ -70,6 +70,12 @@ Set Up Graph Protocal Cli https://thegraph.com/docs/define-a-subgraph#install-th
     Notice the Graph Protocol uses Postgres for it's underlying database
     You should get a confirm message that the database is ready to accept connections
 
+
+
+    a. Because it has recently become more difficult recently to work with a local ether net, it is better to just start using a testnet.
+    infura: 
+
+
   3. initialize new subgraph instance
     > npm install -g @graphprotocol/graph-cli
 
@@ -247,3 +253,8 @@ ECHO-
 
   “Let us advance on Chaos and the Dark”
 ― Ralph Waldo Emerson, Self-Reliance
+
+
+
+
+Etherscan.io: https://etherscan.io/
